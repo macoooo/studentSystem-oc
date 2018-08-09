@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		970A0CA52119B848002CDDFD /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970A0CA42119B848002CDDFD /* ScanViewController.m */; };
+		970A0CA82119C189002CDDFD /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970A0CA72119C189002CDDFD /* InputTableViewCell.m */; };
+		970BDAF2211ADD3500DD51D0 /* 左箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = 970BDAF1211ADD3500DD51D0 /* 左箭头.png */; };
+		970C4637211979B5005E6882 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C4636211979B5005E6882 /* RegisterViewController.m */; };
+		970C463A21197F38005E6882 /* FunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C463921197F38005E6882 /* FunctionViewController.m */; };
+		970C463D2119841C005E6882 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C463C2119841C005E6882 /* AddViewController.m */; };
+		970C464021198CC4005E6882 /* DeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C463F21198CC4005E6882 /* DeleteViewController.m */; };
+		970C464321198FFD005E6882 /* ModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C464221198FFD005E6882 /* ModifyViewController.m */; };
+		970C46462119901C005E6882 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C46452119901C005E6882 /* SearchViewController.m */; };
+		970C464921199284005E6882 /* StudentMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C464821199284005E6882 /* StudentMessage.m */; };
+		970C464C2119973F005E6882 /* AccountMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C464B2119973F005E6882 /* AccountMessage.m */; };
+		970C464F2119993A005E6882 /* StudentMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 970C464E2119993A005E6882 /* StudentMessageTableViewCell.m */; };
+		970F8A82211C373800295E5B /* 圈圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 970F8A81211C373700295E5B /* 圈圈.png */; };
+		970F8A84211C374100295E5B /* 实圈圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 970F8A83211C374000295E5B /* 实圈圈.png */; };
 		973E7CED21193D3500CE7F46 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E7CEC21193D3500CE7F46 /* AppDelegate.m */; };
 		973E7CF021193D3500CE7F46 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E7CEF21193D3500CE7F46 /* ViewController.m */; };
 		973E7CF321193D3500CE7F46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973E7CF121193D3500CE7F46 /* Main.storyboard */; };
@@ -15,6 +29,7 @@
 		973E7CFB21193D3700CE7F46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E7CFA21193D3700CE7F46 /* main.m */; };
 		973E7D0521193D3700CE7F46 /* ________Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E7D0421193D3700CE7F46 /* ________Tests.m */; };
 		973E7D1021193D3700CE7F46 /* ________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 973E7D0F21193D3700CE7F46 /* ________UITests.m */; };
+		974A3A9C211BEBD8009A9440 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974A3A9B211BEBD8009A9440 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		970A0CA32119B848002CDDFD /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		970A0CA42119B848002CDDFD /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		970A0CA62119C189002CDDFD /* InputTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		970A0CA72119C189002CDDFD /* InputTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
+		970BDAF0211AD4C400DD51D0 /* SelectProtocal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectProtocal.h; sourceTree = "<group>"; };
+		970BDAF1211ADD3500DD51D0 /* 左箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "左箭头.png"; path = "../素材/左箭头.png"; sourceTree = "<group>"; };
+		970C4635211979B5005E6882 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		970C4636211979B5005E6882 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		970C463821197F38005E6882 /* FunctionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionViewController.h; sourceTree = "<group>"; };
+		970C463921197F38005E6882 /* FunctionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FunctionViewController.m; sourceTree = "<group>"; };
+		970C463B2119841C005E6882 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		970C463C2119841C005E6882 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		970C463E21198CC4005E6882 /* DeleteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeleteViewController.h; sourceTree = "<group>"; };
+		970C463F21198CC4005E6882 /* DeleteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeleteViewController.m; sourceTree = "<group>"; };
+		970C464121198FFD005E6882 /* ModifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyViewController.h; sourceTree = "<group>"; };
+		970C464221198FFD005E6882 /* ModifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyViewController.m; sourceTree = "<group>"; };
+		970C46442119901C005E6882 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		970C46452119901C005E6882 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		970C464721199284005E6882 /* StudentMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentMessage.h; sourceTree = "<group>"; };
+		970C464821199284005E6882 /* StudentMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentMessage.m; sourceTree = "<group>"; };
+		970C464A2119973F005E6882 /* AccountMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountMessage.h; sourceTree = "<group>"; };
+		970C464B2119973F005E6882 /* AccountMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountMessage.m; sourceTree = "<group>"; };
+		970C464D2119993A005E6882 /* StudentMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentMessageTableViewCell.h; sourceTree = "<group>"; };
+		970C464E2119993A005E6882 /* StudentMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentMessageTableViewCell.m; sourceTree = "<group>"; };
+		970F8A81211C373700295E5B /* 圈圈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "圈圈.png"; path = "../../Downloads/圈圈.png"; sourceTree = "<group>"; };
+		970F8A83211C374000295E5B /* 实圈圈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "实圈圈.png"; path = "../../Downloads/实圈圈.png"; sourceTree = "<group>"; };
 		973E7CE821193D3500CE7F46 /* 学生成绩管理系统.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "学生成绩管理系统.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		973E7CEB21193D3500CE7F46 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		973E7CEC21193D3500CE7F46 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +92,8 @@
 		973E7D0B21193D3700CE7F46 /* 学生成绩管理系统UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "学生成绩管理系统UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		973E7D0F21193D3700CE7F46 /* ________UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "________UITests.m"; sourceTree = "<group>"; };
 		973E7D1121193D3700CE7F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		974A3A9A211BEBD8009A9440 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		974A3A9B211BEBD8009A9440 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +124,9 @@
 		973E7CDF21193D3500CE7F46 = {
 			isa = PBXGroup;
 			children = (
+				970BDAF1211ADD3500DD51D0 /* 左箭头.png */,
+				970F8A81211C373700295E5B /* 圈圈.png */,
+				970F8A83211C374000295E5B /* 实圈圈.png */,
 				973E7CEA21193D3500CE7F46 /* 学生成绩管理系统 */,
 				973E7D0321193D3700CE7F46 /* 学生成绩管理系统Tests */,
 				973E7D0E21193D3700CE7F46 /* 学生成绩管理系统UITests */,
@@ -101,10 +147,35 @@
 		973E7CEA21193D3500CE7F46 /* 学生成绩管理系统 */ = {
 			isa = PBXGroup;
 			children = (
+				970BDAF0211AD4C400DD51D0 /* SelectProtocal.h */,
 				973E7CEB21193D3500CE7F46 /* AppDelegate.h */,
 				973E7CEC21193D3500CE7F46 /* AppDelegate.m */,
+				970C4635211979B5005E6882 /* RegisterViewController.h */,
+				970C4636211979B5005E6882 /* RegisterViewController.m */,
 				973E7CEE21193D3500CE7F46 /* ViewController.h */,
 				973E7CEF21193D3500CE7F46 /* ViewController.m */,
+				974A3A9A211BEBD8009A9440 /* LoginViewController.h */,
+				974A3A9B211BEBD8009A9440 /* LoginViewController.m */,
+				970C463821197F38005E6882 /* FunctionViewController.h */,
+				970C463921197F38005E6882 /* FunctionViewController.m */,
+				970C464721199284005E6882 /* StudentMessage.h */,
+				970C464821199284005E6882 /* StudentMessage.m */,
+				970C464A2119973F005E6882 /* AccountMessage.h */,
+				970C464B2119973F005E6882 /* AccountMessage.m */,
+				970C464D2119993A005E6882 /* StudentMessageTableViewCell.h */,
+				970C464E2119993A005E6882 /* StudentMessageTableViewCell.m */,
+				970A0CA62119C189002CDDFD /* InputTableViewCell.h */,
+				970A0CA72119C189002CDDFD /* InputTableViewCell.m */,
+				970A0CA32119B848002CDDFD /* ScanViewController.h */,
+				970A0CA42119B848002CDDFD /* ScanViewController.m */,
+				970C463B2119841C005E6882 /* AddViewController.h */,
+				970C463C2119841C005E6882 /* AddViewController.m */,
+				970C463E21198CC4005E6882 /* DeleteViewController.h */,
+				970C463F21198CC4005E6882 /* DeleteViewController.m */,
+				970C464121198FFD005E6882 /* ModifyViewController.h */,
+				970C464221198FFD005E6882 /* ModifyViewController.m */,
+				970C46442119901C005E6882 /* SearchViewController.h */,
+				970C46452119901C005E6882 /* SearchViewController.m */,
 				973E7CF121193D3500CE7F46 /* Main.storyboard */,
 				973E7CF421193D3700CE7F46 /* Assets.xcassets */,
 				973E7CF621193D3700CE7F46 /* LaunchScreen.storyboard */,
@@ -235,7 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970F8A84211C374100295E5B /* 实圈圈.png in Resources */,
+				970F8A82211C373800295E5B /* 圈圈.png in Resources */,
 				973E7CF821193D3700CE7F46 /* LaunchScreen.storyboard in Resources */,
+				970BDAF2211ADD3500DD51D0 /* 左箭头.png in Resources */,
 				973E7CF521193D3700CE7F46 /* Assets.xcassets in Resources */,
 				973E7CF321193D3500CE7F46 /* Main.storyboard in Resources */,
 			);
@@ -262,9 +336,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970C464321198FFD005E6882 /* ModifyViewController.m in Sources */,
 				973E7CF021193D3500CE7F46 /* ViewController.m in Sources */,
 				973E7CFB21193D3700CE7F46 /* main.m in Sources */,
+				970C464F2119993A005E6882 /* StudentMessageTableViewCell.m in Sources */,
+				970A0CA52119B848002CDDFD /* ScanViewController.m in Sources */,
+				970C463D2119841C005E6882 /* AddViewController.m in Sources */,
+				970A0CA82119C189002CDDFD /* InputTableViewCell.m in Sources */,
+				970C46462119901C005E6882 /* SearchViewController.m in Sources */,
 				973E7CED21193D3500CE7F46 /* AppDelegate.m in Sources */,
+				970C464021198CC4005E6882 /* DeleteViewController.m in Sources */,
+				970C464921199284005E6882 /* StudentMessage.m in Sources */,
+				970C463A21197F38005E6882 /* FunctionViewController.m in Sources */,
+				970C4637211979B5005E6882 /* RegisterViewController.m in Sources */,
+				970C464C2119973F005E6882 /* AccountMessage.m in Sources */,
+				974A3A9C211BEBD8009A9440 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
