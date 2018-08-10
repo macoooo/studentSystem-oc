@@ -177,20 +177,20 @@
     InputTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"InputCell"];
     
     cell.nameTextField.text = _findStudent.name;
-    cell.numberTextField.text = _findStudent.number;
+    cell.numberTextLabel.text = _findStudent.number;
     cell.classTextField.text = _findStudent.classes;
     cell.sexTextField.text = _findStudent.sex;
     cell.scoreTextField.text = _findStudent.scores;
     
     
     _nameStr = cell.nameTextField.text;
-    _numberStr = cell.numberTextField.text;
+    _numberStr = cell.numberTextLabel.text;
     _classStr = cell.classTextField.text;
     _sexStr = cell.sexTextField.text;
     _scoreStr = cell.scoreTextField.text;
     
     [cell.nameTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
-     [cell.numberTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+//     [cell.numberTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
      [cell.classTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
      [cell.sexTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
      [cell.scoreTextField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];

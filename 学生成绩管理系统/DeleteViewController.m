@@ -16,6 +16,8 @@
 @property (nonatomic, strong)NSMutableArray *students;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)StudentMessage *findStudent;
+@property (nonatomic, strong)UIButton *sureButton;
+@property (nonatomic, strong)UIButton *exitButton;
 @end
 
 @implementation DeleteViewController
@@ -81,42 +83,17 @@
     }
     else{
         [self creatTableView];
-        UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 80, 40)];
-        [sureButton setTitle:@"确定删除" forState:UIControlStateNormal];
-        [sureButton addTarget:self action:@selector(sureDeleteClick) forControlEvents:UIControlEventTouchUpInside];
-        [self setButton:sureButton];
-        
-        UIButton *exitButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 300, 80, 40)];
-        [exitButton setTitle:@"取消删除" forState:UIControlStateNormal];
-        [exitButton addTarget:self action:@selector(exitDeleteClick) forControlEvents:UIControlEventTouchUpInside];
-        [self setButton:exitButton];
+//        _sureButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 80, 40)];
+//        [_sureButton setTitle:@"确定删除" forState:UIControlStateNormal];
+//        [_sureButton addTarget:self action:@selector(sureDeleteClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self setButton:_sureButton];
+//
+//        _exitButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 300, 80, 40)];
+//        [_exitButton setTitle:@"取消删除" forState:UIControlStateNormal];
+//        [_exitButton addTarget:self action:@selector(exitDeleteClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self setButton:_exitButton];
     }
     
-}
-- (void)sureDeleteClick
-{
-    [_students removeObject:_findStudent];
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"删除成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
-    [alert addAction:deleteAction];
-    [self presentViewController:alert animated:YES completion:nil];
-    
-}
-- (void)exitDeleteClick
-{
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"谢谢您的参与" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
-    [alert addAction:deleteAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-- (void)setButton:(UIButton *)button
-{
-    button.backgroundColor = [UIColor whiteColor];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.layer.cornerRadius = 3;
-    button.layer.masksToBounds = YES;
-    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    [self.view addSubview:button];
 }
 - (void)creatTableView
 {
@@ -128,6 +105,60 @@
     _tableView.dataSource = self;
     [self.tableView reloadData];
     [self.view addSubview:_tableView];
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;//手势滑动删除
+    
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    if (editingStyle ==UITableViewCellEditingStyleDelete) {
+        // 1.调用接口，从服务器删除此条数据
+        // 2.服务器删除成功，调用下面几行代码
+        // 将此条数据从数组中移除，seld.array为存放列表数据的可变数组
+        [_students removeObject:_findStudent];
+        //再将此条cell从列表删除,_tableView为列表
+        [_tableView beginUpdates];
+        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //记得刷新列表
+        [UIView animateWithDuration:0.3 animations:^{
+                        self.tableView.frame = CGRectMake(240, 210, 120, 0);
+                    }];
+    }
+}
+
+
+//- (void)sureDeleteClick
+//{
+//    [_students removeObject:_findStudent];
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"删除成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+//    [alert addAction:deleteAction];
+//    [self presentViewController:alert animated:YES completion:nil];
+//
+//}
+//- (void)exitDeleteClick
+//{
+//    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"谢谢您的参与" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^void(UIAlertAction *action){
+//        [UIView animateWithDuration:0.3 animations:^{
+//            self.tableView.frame = CGRectMake(240, 210, 120, 0);
+//            self.sureButton.frame = CGRectMake(100, 300, 80, 0);
+//            self.exitButton.frame = CGRectMake(200, 300, 80, 0);
+//        }];
+//    }];
+//    [alert addAction:deleteAction];
+//    [self presentViewController:alert animated:YES completion:nil];
+//}
+- (void)setButton:(UIButton *)button
+{
+    button.backgroundColor = [UIColor whiteColor];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button.layer.cornerRadius = 3;
+    button.layer.masksToBounds = YES;
+    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.view addSubview:button];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -141,8 +172,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StudentMessageTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"cellStudent"];
-    
-    
     cell.nameTextLabel.text = _findStudent.name;
     cell.numberTextLabel.text = _findStudent.number;
     cell.classTextLabel.text = _findStudent.classes;

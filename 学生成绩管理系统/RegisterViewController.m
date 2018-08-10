@@ -12,6 +12,7 @@
 @interface RegisterViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) UITextField *AccountTextField;
 @property (nonatomic, strong)UITextField *PasswordTextField;
+@property (nonatomic, strong)UITextField *sureTextField;
 @property (nonatomic, strong)NSMutableArray *accountMutableArray;
 @property (nonatomic, strong)AccountMessage *accountCheck;
 
@@ -24,23 +25,32 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:0.91f green:0.96f blue:0.75f alpha:1.00f];
     
-    UILabel *AccountLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 230, 60, 50)];
+    UILabel *AccountLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 170, 100, 50)];
     AccountLabel.text = @"账号";
     [self setLable:AccountLabel];
     
-    UILabel *PasswordLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 290, 60, 50)];
+    UILabel *PasswordLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 230, 100, 50)];
     PasswordLabel.text = @"密码";
+    
+    UILabel *sureLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 290, 100, 50)];
+    sureLabel.text = @"确认密码";
+    
     [self setLable:PasswordLabel];
+    [self setLable:sureLabel];
     
     _AccountTextField = [[UITextField
-                          alloc] initWithFrame:CGRectMake(110, 230, 250, 50)];
+                          alloc] initWithFrame:CGRectMake(140, 170, 250, 50)];
     _AccountTextField.placeholder = @"请输入不少于8位";
     [self setTextField:_AccountTextField];
     
-    _PasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(110, 290, 250, 50)];
+    _PasswordTextField = [[UITextField alloc] initWithFrame:CGRectMake(140, 230, 250, 50)];
     _PasswordTextField.placeholder = @"请输入不少于8位";
     _PasswordTextField.secureTextEntry = YES;
     [self setTextField:_PasswordTextField];
+    
+    _sureTextField = [[UITextField alloc] initWithFrame:CGRectMake(140, 290, 250, 50)];
+    _sureTextField.secureTextEntry = YES;
+    [self setTextField:_sureTextField];
     
     UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake(150, 360, 100, 40)];
     [sureButton setTitle:@"确认注册" forState:UIControlStateNormal];
@@ -116,6 +126,12 @@
         [self presentViewController:alert animated:YES completion:nil];
     }
     else{
+        if(![_sureTextField.text isEqualToString:_PasswordTextField.text]){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"两次输入不同" message:@" 请检查输入" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+            [alert addAction:sureAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"注册成功" message:@" " preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^void(UIAlertAction *action){
             if([self.delegate respondsToSelector:@selector(changeAccount:)]){

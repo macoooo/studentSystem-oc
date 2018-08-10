@@ -15,12 +15,14 @@
 @property (nonatomic, strong)NSMutableArray *students;
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)StudentMessage *findStudent;
+@property int flag;
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _flag = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"查找学生信息";
     self.navigationController.navigationBar.hidden = NO;
@@ -52,11 +54,22 @@
     _students = [NSMutableArray array];
     [_students addObjectsFromArray:_middleStudents];
     NSLog(@"%ld",_students.count);
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 165, 410, 120) style:UITableViewStylePlain];
+
+    [_tableView registerClass:[StudentMessageTableViewCell class] forCellReuseIdentifier:@"cellStudent"];
+
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorStyle = NO;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [self.view addSubview:_tableView];
+    
     // Do any additional setup after loading the view.
 }
 - (void)searchClick
 {
-    int flag = 0;
+    _flag = 0;
+    NSLog(@"%@", _searchTextField.text);
     StudentMessage *tempStudent = [[StudentMessage alloc] initWithName:nil andNumber:_searchTextField.text andClasses:nil andSex:nil andScores:nil];
     _findStudent = [[StudentMessage alloc] init];
     if([tempStudent checkNumber:_searchTextField.text]){
@@ -69,42 +82,39 @@
         tempStudent = _students[i];
         if([_searchTextField.text isEqualToString:tempStudent.number]){
             _findStudent = tempStudent;
-            flag = 1;
+            _flag = 1;
             break;
         }
     }
-    if(!flag){
+    NSLog(@"%d",_flag);
+    if(!_flag){
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"抱歉，没有这个学生信息" message:@"" preferredStyle:UIAlertControllerStyleAlert];
         
         
-        UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive
-                                                             handler:^(UIAlertAction * action) {
-                                                                 //响应事件
-                                                                 NSLog(@"action = %@", action);
-                                                             }];
+        UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+            
+        
         [alert addAction:deleteAction];
         [self presentViewController:alert animated:YES completion:nil];
-    }
-    else{
-        [self creatTableView];
+        [self.tableView reloadData];
+    }else{
+        NSLog(@"fgfdg");
+       [self.tableView reloadData];
     }
     
 }
-- (void)creatTableView
-{
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 165, 410, 120) style:UITableViewStylePlain];
-    
-    [_tableView registerClass:[StudentMessageTableViewCell class] forCellReuseIdentifier:@"cellStudent"];
-    
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    [self.tableView reloadData];
-    [self.view addSubview:_tableView];
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(_flag){
     return 1 ;
+    };
+    return 0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,7 +124,7 @@
 {
     StudentMessageTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"cellStudent"];
     
-    
+    NSLog(@"dgdffdgdfgfghg");
     cell.nameTextLabel.text = _findStudent.name;
     cell.numberTextLabel.text = _findStudent.number;
     cell.classTextLabel.text = _findStudent.classes;

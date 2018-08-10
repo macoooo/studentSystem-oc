@@ -89,6 +89,7 @@
     AllLabel.textColor = [UIColor blackColor];
     AllLabel.layer.cornerRadius = 3;
     AllLabel.layer.masksToBounds = YES;
+    AllLabel.layer.borderColor = [UIColor whiteColor].CGColor;
     AllLabel.backgroundColor = [UIColor whiteColor];
     AllLabel.textAlignment = NSTextAlignmentCenter;
     

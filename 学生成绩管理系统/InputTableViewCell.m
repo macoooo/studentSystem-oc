@@ -31,8 +31,8 @@
         self.nameTextField = [[UITextField alloc] init];
         [self.contentView addSubview:_nameTextField];
         
-        self.numberTextField = [[UITextField alloc] init];
-        [self.contentView addSubview:_numberTextField];
+        self.numberTextLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_numberTextLabel];
         
         self.classTextField = [[UITextField alloc] init];
         [self.contentView addSubview:_classTextField];
@@ -71,9 +71,9 @@
     _nameTextField.tag = 1;
     [self setTextField:_nameTextField];
     
-    _numberTextField.frame = CGRectMake(270,  5, 120, 35);
-    _numberTextField.tag = 2;
-    [self setTextField:_numberTextField];
+    _numberTextLabel.frame = CGRectMake(270,  5, 120, 35);
+    _numberTextLabel.tag = 2;
+    [self setLable:_numberTextLabel];
     
     _classTextField.frame = CGRectMake(70, 40, 120, 35);
     _classTextField.tag = 3;
@@ -105,7 +105,7 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.nameTextField resignFirstResponder];
-    [self.numberTextField resignFirstResponder];
+    //[self.numberTextField resignFirstResponder];
     [self.classTextField resignFirstResponder];
     [self.sexTextField resignFirstResponder];
     [self.scoreTextField resignFirstResponder];

@@ -22,15 +22,16 @@
 @implementation LoginViewController
 
 
-//- (void)changeAccount:(AccountMessage *)addAccount
-//{
-//    self.addNewAccount = addAccount;
-//    NSLog(@"%@",_addNewAccount);
-//    if(self.addNewAccount){
-//        [_accountMutableArray addObject:_addNewAccount];
-//    }
-//    NSLog(@"%ld22",_accountMutableArray.count);
-//}
+- (void)changeAccount:(AccountMessage *)addAccount
+{
+    _addNewAccount = [[AccountMessage alloc] init];
+    self.addNewAccount = addAccount;
+    NSLog(@"%@",_addNewAccount);
+    if(self.addNewAccount){
+        [_accountMutableArray addObject:_addNewAccount];
+    }
+    NSLog(@"%ld22",_accountMutableArray.count);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -83,7 +84,8 @@
     [_accountMutableArray addObject:firstAccount];
     [_accountMutableArray addObject:secondAccount];
     [_accountMutableArray addObject:thirdAccount];
-    
+    [self changeAccount:_addNewAccount];
+    NSLog(@"%@",_addNewAccount);
     if(_addNewAccount){
         [_accountMutableArray addObject:_addNewAccount];
     }
